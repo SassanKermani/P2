@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<title>  </title>
+		
+	</head>
+	<body>
+		
+		<h3 id="monster"> monster </h3>
+
+		<hr>
+
+		<p > hp:</p> 
+
+		<p id="hp">  </p>
+		
+		<hr>
+
+		<button id="doTheFight" onclick="fight()"> Fight </button>
+
+		<br>
+		<br>
+
+		<%= i %>
+
+	</body>
+	
+	<script>
+		//test at start
+		console.log("monster");
+
+		let xhttp = new XMLHttpRequest();
+
+		xhttp.open("GET", "http://www.dnd5eapi.co/api/monsters/" + <%= i + 1 %>, true);
+ 		xhttp.send();
+
+ 		let stuff;
+
+		function loadXMLDoc(){
+			// let xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function(){
+				if (this.readyState == 4 && this.status == 200) {
+
+					stuff = JSON.parse(xhttp.responseText);
+
+					getNewHp();
+
+					console.log(stuff);
+					console.log(stuff.hit_dice.length);
+
+
+					//document.getElementById('hp').innerHTML = stuff.
+
+
+				}else{
+					console.log("it broke");
+				}
+			}
+		}
+
+		loadXMLDoc();
+
+		//teast at end
+		console.log(<%= i %>)
+
+		//dom minipulations
+		//let newHp;
+
+		//this needs to be at this level for latter 
+		let hp = 0;
+
+		function getNewHp(){
+
+			//this is tricky bisnes need vars to do all this shit
+			let changeThing = false
+			let dOne = "";
+			let dTwo = "";
+			let reallyShouldNotNeedAVarForThisButImLazy = 0;
+
+			//geting the vars to how i need them to be
+			for(let i = 0; i < stuff.hit_dice.length; i++){
+				console.log(i);
+
+				//sing what side of d we are on (ya i see the joke now ha ha ha)
+				if(stuff.hit_dice.charAt(i) === "d"){
+					changeThing = true;
+					reallyShouldNotNeedAVarForThisButImLazy = reallyShouldNotNeedAVarForThisButImLazy + 1;
+				}
+
+				//setting up dtow
+				if(changeThing === true && reallyShouldNotNeedAVarForThisButImLazy >= 2 ){
+
+					dTwo = dTwo + stuff.hit_dice.charAt(i);
+
+				}
+				//setting up dOne
+				if(changeThing == false){
+
+					dOne = dOne + stuff.hit_dice.charAt(i);
+
+				}
+
+				//so that you dont get a d where you dont want one. (ahyyyyyyyyy)
+				if(reallyShouldNotNeedAVarForThisButImLazy > 0){
+					reallyShouldNotNeedAVarForThisButImLazy = reallyShouldNotNeedAVarForThisButImLazy + 1;
+				}
+							
+			}
+
+			//seeing if stuff worked 
+			console.log("dOne: " + dOne);
+			console.log("dTwo: " + dTwo);
+
+			//getting total of the hP
+			for(let i = 0; i < parseInt(dOne); i++){
+				hp = hp + Math.floor(Math.random() * Math.floor(dTwo));
+			}
+
+			console.log("hp: " + hp);
+			document.getElementById('hp').innerHTML = hp;
+			document.getElementById('monster').innerHTML = stuff.name;
+		}
+		
+
+
+		function fight(){
+			hp = hp - 1;
+
+			if(hp <= 0){
+				console.log("you killed it ");
+				document.getElementById('doTheFight').innerHTML = "you killed it.";
+				/********************************************************************
+				*	This is wherer you need to put the conection to the user		*
+				********************************************************************/
+			}
+
+			if(hp <= -10){
+				console.log("you killed it ");
+				document.getElementById('doTheFight').innerHTML = "Now your just bing a dick";
+			}
+
+			document.getElementById('hp').innerHTML = hp;
+		}
+
+
+	</script>
+
+</html>

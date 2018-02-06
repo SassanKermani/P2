@@ -1,0 +1,56 @@
+<% include partials/haeder.ejs %>
+
+<center> 
+	
+	<%= /*thisIsAThing */  %>
+
+	<h1> Yo </h1>
+
+	<p> You did the thing! </p>
+
+	<a href="http://localhost:4000/sup"> 
+		<button> Sup </button>
+	</a>
+	
+	<br>
+	<br>
+
+	<button id="test"> see things to fight </button>
+	
+	<br>
+	<br>
+
+	<div id="new">  </div>
+
+ </center>
+
+ <!-- this is part two of the the the thing -->
+<center>
+	
+	<form method="post" action="/chat">
+
+    	<label for="email">Email</label>
+    	<input class="form-control"  type="text" name="name" >
+						
+   		<br>
+						
+    	<label for="email">message</label>
+   		<input class="form-control" type="text" name="message" >
+
+   		<br>
+			
+		<input value="Submit" type="submit" >
+    
+	</form>
+	
+	<br>
+	<br>
+
+	<button id="seeChat"> see chats </button>
+	<br>
+	<br>
+	<div id="newChats"> </div>
+</center>
+
+ 
+<% include partials/footer.ejs %>
