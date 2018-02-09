@@ -1,56 +1,93 @@
 <% include partials/haeder.ejs %>
 
 <center> 
-	
-	<%= /*thisIsAThing */  %>
+	<div class="container-fluid">
+	 	<div class="container">
+	 		<div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11">
 
-	<h1> Yo </h1>
+				<%= /*thisIsAThing */  %>
 
-	<p> You did the thing! </p>
+				<h1> Yo </h1>
 
-	<a href="http://localhost:4000/sup"> 
-		<button> Sup </button>
-	</a>
-	
-	<br>
-	<br>
+				<p> You did the thing! </p>
 
-	<button id="test"> see things to fight </button>
-	
-	<br>
-	<br>
+				<a href="http://localhost:4000/sup"> 
+					<button> Sup </button>
+				</a>
+				
+				<!-- <br>
+				<br>
 
-	<div id="new">  </div>
+				<button id="test"> see things to fight </button>
+				
+				<br>
+				<br>
 
+				<div id="new">  </div> -->
+			</div>
+		</div>
+	</div>
  </center>
+
+ <br>
+ <br>
 
  <!-- this is part two of the the the thing -->
 <center>
-	
-	<form method="post" action="/chat">
+	<div class="container-fluid">
+	 	<div class="container">
+	 		<div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11">
+		
+				<form method="post" action="/chat">
 
-    	<label for="email">Email</label>
-    	<input class="form-control"  type="text" name="name" >
+			    	<label for="email">Email</label>
+			    	<!-- <input class="form-control"  type="text" name="name" > -->
+			    	<input class="form-control"  type="text" name="name" value=" <%= currentUser.local.email %> " readonly>
+									
+			   		<br>
+									
+			    	<label for="email">message</label>
+			   		<input class="form-control" type="text" name="message" >
+
+
+			   		<br>
 						
-   		<br>
-						
-    	<label for="email">message</label>
-   		<input class="form-control" type="text" name="message" >
-
-   		<br>
-			
-		<input value="Submit" type="submit" >
-    
-	</form>
-	
-	<br>
-	<br>
-
-	<button id="seeChat"> see chats </button>
-	<br>
-	<br>
-	<div id="newChats"> </div>
+					<input value="Submit" type="submit" >
+			    
+				</form>
+		
+		<!-- <br>
+		<br>
+		<button id="seeChat"> see chats </button>
+		<br>
+		<br>
+		<div id="newChats"> </div> -->
+			</div>
+		</div>
+	</div>
 </center>
+<!-- we are going to have to throw the html in hear so bucklu up butter cup -->
+<div class="container-fluid">
+ 	<div class="container">
+ 		<div class="row">
+ 			<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+ 				<br>
+				<br>
+				<button id="seeChat"> see chats </button>
+				<br>
+				<br>
+				<div id="newChats"> </div>
+ 			</div>
+ 			<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+	 			<br>
+				<br>
+				<button id="test"> see things to fight </button>
+				<br>
+				<br>
+			<div id="new">  </div>
+ 		</div>
+ 		</div>
+ 	</div>
+</div>
 
- 
 <% include partials/footer.ejs %>

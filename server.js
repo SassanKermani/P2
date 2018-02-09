@@ -35,9 +35,17 @@ require('./config/passport')(passport);
 
 app.use(function(req, res, next){
 	res.locals.currentUser = req.user;
+	next();
 })
 
+// //testing 
+// app.get('/', function(req, res){
+// 	console.log("hit the test rout");
+// 	res.send("hit the test rout")
+// })
+
 //setting up routs
+console.log("at server");
 app.use(router);
 
 //its listening

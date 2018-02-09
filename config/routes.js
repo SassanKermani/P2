@@ -3,16 +3,16 @@ const
 	router = express.Router(),
 	vew = require('../controllers/view_controller'),
 	db = require('../models');
-  var bodyParser= require('body-parser');
+  //var bodyParser= require('body-parser');
 
-  router.use(bodyParser.urlencoded({ extended: true }));
+  //router.use(bodyParser.urlencoded({ extended: true }));
 
 
 //get /yo
-router.get('/yo', vew.sendHomepage);
+router.get('/yo', authenticatedUser, vew.sendHomepage);
 
 //get /sup
-router.get('/sup', vew.two);
+router.get('/sup', authenticatedUser, vew.two);
 
 
 // //test now is a dead zone
@@ -68,6 +68,37 @@ router.delete('/chat/:id', function(req, res){
     res.json(deletedChat);
   });
 });
+
+/******************************
+*   routs for passprot stuff  *
+******************************/
+
+//seeing if user is authenticated 
+function authenticatedUser(req, res, next){
+  if(req.isAuthenticated()){
+    return next();
+  }
+  res.redirect('/');
+};
+
+//signup
+router.route('/signup')
+  .get(vew.gettSignup)
+  .post(vew.postSignup);
+
+//login
+router.route('/')
+  .get(vew.getLogin)
+  .post(vew.postLogin);
+
+//logout
+router.route('/logout')
+  .get(vew.getLogout);
+
+// test
+// function test(){
+//   console.log("hit test function")
+// }
 
 //exports the router
 module.exports = router;
