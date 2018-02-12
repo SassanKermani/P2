@@ -1,20 +1,38 @@
 <% include ./partials/haeder.ejs %>
 
 <center>
+	
+	<div class="container-fluid">
+	 	<div class="container">
+	 		<div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11">
 
-<h2>Signup</h2>
+				<h2>Signup</h2>
 
-  <form method="post" action="/signup">
+				<form method="post" action="/signup">
 
-    <label for="email">Email</label>
-    <input class="form-control" type="text" name="email" id="email">
+				    <label for="email">Email</label>
+				    <input class="form-control" type="text" name="email" id="email">
 
-    <label for="email">Password</label>
-    <input class="form-control" type="password" name="password" id="password">
+				    <label for="email">Password</label>
+				    <input class="form-control" type="password" name="password" id="password">
+					
+					<br>
 
-    <input class="btn btn-default" type="submit">
-    
-</form>
+				    <input class="btn btn-default" type="submit">
+			    
+				</form>
+
+				<br>
+
+				<a href="/">
+					<button>
+						login
+					</button>
+				</a>
+			
+			</div>
+		</div>
+	</div>
 
 </center>
 

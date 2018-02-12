@@ -1,30 +1,37 @@
-<!DOCTYPE html>
-<html>
-	<head>
+<% include ./partials/haeder.ejs %>
+
+	<center>
+		<div class="container-fluid">
+	 		<div class="container">
+	 			<div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11">
 		
-		<title>  </title>
-		
-	</head>
-	<body>
-		
-		<h3 id="monster"> monster </h3>
+					<h3 id="monster"> monster </h3>
 
-		<hr>
+					<hr>
 
-		<p > hp:</p> 
+					<p > hp:</p> 
 
-		<p id="hp">  </p>
-		
-		<hr>
+					<p id="hp">  </p>
+					
+					<hr>
 
-		<button id="doTheFight" onclick="fight()"> Fight </button>
+					<button id="doTheFight" onclick="fight()"> Fight </button>
 
-		<br>
-		<br>
+					<br>
+					<br>
+				
+					<a href="/yo">
+						<button>
+							return to yo 
+						</button>
+					</a>
+					<% i %>
 
-		<%= i %>
+				</div>
+			</div>
+		</div>
 
-	</body>
+	</center>
 	
 	<script>
 		//test at start
@@ -146,4 +153,4 @@
 
 	</script>
 
-</html>
+<% include partials/footer.ejs %>

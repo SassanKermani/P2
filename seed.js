@@ -35,18 +35,22 @@ let chats_list = [
 ];
 
 //putting it in the datta base and whiping anything that might have been there befor			chats
-db.chat.remove({}, function(err, chats){
+db.chat.remove({}, function(err, chat){
   if(err) {
     console.log('Error occurred in remove: ', err);
   } else {
 
-    // create new records based on the array chats_list
-    db.chat.create(chats_list, function(err, chats){
-      if (err) { return console.log('err', err); }
-      console.log("it worked");
-      process.exit();
-    });
+  	console.log("got hear");
+
+    // // create new records based on the array chats_list
+    // db.chat.create(chats_list, function(err, chats){
+    //   if (err) { return console.log('err', err); }
+    //   console.log("it worked");
+    //   process.exit();
+    // });
   }
 });
+
+console.log("test");
 
 
