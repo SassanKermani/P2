@@ -19,8 +19,8 @@ citation needed
 
 ***
 
-###[trello (citation needed)]
-citation needed
+###[trello (https://trello.com/b/ONToxfdZ/wdi5-project-2)]
+https://trello.com/b/ONToxfdZ/wdi5-project-2
 
 ***
 
