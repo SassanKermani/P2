@@ -16,6 +16,7 @@
     "chai": "^4.1.2",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.3",
+    "create-react-app-module": "^1.1.1",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
     "express-ejs-layouts": "^2.3.1",

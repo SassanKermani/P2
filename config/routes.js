@@ -23,7 +23,7 @@ router.get('/sup', authenticatedUser, vew.two);
 
 //the big one 
 for( let i = 0; i < 326; i++){
-	router.get('/' + i, function(req, res){
+	router.get( '/' + i, authenticatedUser, function(req, res){
 
 		//res.send("befor <br> test: " + {i} + " <br> after" );
 		res.render('monster', {i});
@@ -67,6 +67,16 @@ router.delete('/chat/:id', function(req, res){
   db.chat.findOneAndRemove( { _id: chatId }, function(err, deletedChat){
     res.json(deletedChat);
   });
+});
+
+
+//EXTRA POST ROUT FOR API STUF
+router.post('/chat/monster', function(req, res){
+  
+  console.log("did somthing");
+  //console.log(req);
+  console.log(req.body);
+
 });
 
 /******************************

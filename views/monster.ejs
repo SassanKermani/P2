@@ -35,6 +35,8 @@
 	
 	<script>
 		//test at start
+		console.log("<%= currentUser.local.email %>")
+
 		console.log("monster");
 
 		let xhttp = new XMLHttpRequest();
@@ -134,12 +136,18 @@
 		function fight(){
 			hp = hp - 1;
 
+			if(hp == 0){
+				
+				let xhttpAlso = new XMLHttpRequest();
+				xhttpAlso.open("POST", "/chat", true); 
+				xhttpAlso.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+				xhttpAlso.send("name=<%=currentUser.local.email%>&message=<%=currentUser.local.email%> has killed (a/an) " + stuff.name);
+				//xhttpAlso.send("teset")
+			}
+
 			if(hp <= 0){
 				console.log("you killed it ");
 				document.getElementById('doTheFight').innerHTML = "you killed it.";
-				/********************************************************************
-				*	This is wherer you need to put the conection to the user		*
-				********************************************************************/
 			}
 
 			if(hp <= -10){
