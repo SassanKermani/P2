@@ -22,7 +22,7 @@ function loadXMLDoc() {
 
       	//name of monster
       	let name = document.createElement('a');
-      	name.setAttribute('href', "http://localhost:4000/" + i);
+      	name.setAttribute('href', "/" + i);
       	name.innerHTML = stuff.results[i].name;
 
       	//br tag
