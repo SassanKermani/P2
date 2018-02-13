@@ -92,7 +92,7 @@ function ShowUserChats() {
 
   };
 
-  xhttp.open("GET", "http://localhost:4000/chat", true);
+  xhttp.open("GET", "/chat", true);
   xhttp.send();
 
 }
