@@ -28,3 +28,6 @@ https://trello.com/b/ONToxfdZ/wdi5-project-2
 http://quiet-cove-64544.herokuapp.com/
 
 ***
+
+###[My Approach]
+throw everyghing at the wall and see what sticks... repetudly... and then pray.
