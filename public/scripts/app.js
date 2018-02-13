@@ -56,6 +56,10 @@ function loadXMLDoc() {
 //this is to get the chats
 document.getElementById("seeChat").onclick = ShowUserChats;
 
+
+/*===================================================================
+=            we might need to cut this and put it in the            =
+===================================================================*/
 function ShowUserChats() {
   console.log("did a thing")
   let xhttp = new XMLHttpRequest();
@@ -73,25 +77,62 @@ function ShowUserChats() {
       console.log(stuff);
       for(let i =  stuff.length - 1; i > 0; i--){
         
-        let name = document.createElement('p');
-        name.innerHTML = stuff[i].name;
+        // let name = document.createElement('p');
+        // name.innerHTML = stuff[i].name;
 
-        let message = document.createElement('p');
-        message.innerHTML = stuff[i].message;
+        // let message = document.createElement('p');
+        // message.innerHTML = stuff[i].message;
 
-        let br = document.createElement("br");
-        let hr = document.createElement("hr");
+         let br = document.createElement("br");
+        // let hr = document.createElement("hr");
 
-        document.getElementById('newChats').appendChild(name);
-        document.getElementById('newChats').appendChild(message);
+        // document.getElementById('newChats').appendChild(name);
+        // document.getElementById('newChats').appendChild(message);
+        // document.getElementById('newChats').appendChild(br);
+        // document.getElementById('newChats').appendChild(hr);
+
+
+        //setting stuff up with forms.. i know it sounds stupidand it probably is
+        let form = document.createElement('form');
+        form.setAttribute("method","post")
+        form.setAttribute("action", "/chat/" + stuff[i]._id);
+
+        let nameInput = document.createElement('input');
+        nameInput.setAttribute("name", "name");
+        nameInput.readOnly = true;
+
+
+        nameInput.value = stuff[i].name
+
+        let messageInput = document.createElement('input');
+        messageInput.setAttribute("name", "message");
+        messageInput.value = stuff[i].message
+
+        let submitButton = document.createElement('input');
+        submitButton.setAttribute("type", "submit");
+
+        document.getElementById('newChats').appendChild(form)
+        form.appendChild(nameInput);
+        form.appendChild(messageInput);
+
         document.getElementById('newChats').appendChild(br);
-        document.getElementById('newChats').appendChild(hr);
+
+        if(document.getElementById("currentUser").value === nameInput.value){
+          console.log("------------------------------");
+
+          form.appendChild(submitButton);
+
+          console.log(stuff[i]._id)
+
+        }
 
       }
 
     }
 
   };
+
+  /*=====  End of we might need to cut this and put it in the  ======*/
 
   xhttp.open("GET", "/chat", true);
   xhttp.send();

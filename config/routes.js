@@ -49,6 +49,34 @@ router.get('/api/chat/:id', function(req, res){
   });
 });
 
+//"PUT" ROUT (post that updates the db)
+router.post('/chat/:id', function(req, res){
+  console.log("hit it");
+  console.log(req.params.id);
+
+  let id = req.params.id
+
+  db.chat.findById(id, function(err, foundChat){
+
+    console.log(foundChat);
+
+
+    if(err){
+      console.log(err);
+    }
+    console.log("befor");
+
+    foundChat.message = req.body.message;
+
+    console.log("after");
+  })
+
+  console.log(req.body);
+
+  //res.redirect('/yo');
+
+})
+
 //POST
 router.post('/chat', function(req, res){
   let newChat = new db.chat(req.body);
