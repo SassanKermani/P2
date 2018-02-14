@@ -33,3 +33,8 @@ http://quiet-cove-64544.herokuapp.com/
 
 ### [My Approach] ###
 throw everyghing at the wall and see what sticks... repetudly... and then pray.
+
+### [Future Goals] ###
+-have charchter lvs for acoutns that will modify the amout of damig you will do to monsters
+-have the user fight monsters in an order that makes sence acording to there lv. 
+-have a more robust chating system
