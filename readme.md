@@ -21,7 +21,7 @@ this is a website that alows users to chat with eachother, and fight dnd 5e mons
 
 ***
 
-###[trello (https://trello.com/b/ONToxfdZ/wdi5-project-2)]
+###[trello](https://trello.com/b/ONToxfdZ/wdi5-project-2)
 https://trello.com/b/ONToxfdZ/wdi5-project-2
 
 ***
