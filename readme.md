@@ -4,8 +4,10 @@ this is a website that alows users to chat with eachother, and fight dnd 5e mons
 
 ***
 
-### [Wireframe (/assets/IMG_0161.jpeg)]
+### [Wireframe]
 
+
+![Alt text](/assets/IMG_0161.jpeg)
 
 ***
 
