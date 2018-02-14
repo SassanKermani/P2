@@ -56,6 +56,8 @@ router.post('/chat/:id', function(req, res){
 
   let id = req.params.id
 
+  console.log(id)
+
   db.chat.findById(id, function(err, foundChat){
 
     console.log(foundChat);
@@ -64,14 +66,35 @@ router.post('/chat/:id', function(req, res){
     if(err){
       console.log(err);
     }
+
+    chat = db.chat;
+
     console.log("befor");
+
+    console.log(req.body.message);
 
     foundChat.message = req.body.message;
 
+    console.log(foundChat.message);
+
     console.log("after");
+
+    foundChat.save(function(err, updatedChat){
+
+      if(err){
+        res.send()
+      }
+
+      //res.json({ updatedChat });
+      res.redirect('/yo');
+
+      console.log(" sending stuff back ")
+
+    });
+
   })
 
-  console.log(req.body);
+  //console.log(req.body);
 
   //res.redirect('/yo');
 

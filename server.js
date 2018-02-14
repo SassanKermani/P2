@@ -11,6 +11,7 @@ const
 	morgan = require('morgan'),
 	cookieParser = require('cookie-parser'),
 	session = require('express-session'),
+	db = require('mongodb').MongoClient,
 
 	PORT =process.env.PORT || 4000;
 
