@@ -11,7 +11,7 @@ this is a website that alows users to chat with eachother, and fight dnd 5e mons
 
 ***
 
-### [Technologies Used]###
+### [Technologies Used] ###
 -node 
 -mongo
 -passport
